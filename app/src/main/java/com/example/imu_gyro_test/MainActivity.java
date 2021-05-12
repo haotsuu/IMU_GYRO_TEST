@@ -10,6 +10,8 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.Display;
+import android.view.Surface;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,7 +59,6 @@ public class MainActivity extends AppCompatActivity{
 
         list = sm.getSensorList(Sensor.TYPE_LINEAR_ACCELERATION);
         if(list.size()>0){
-
             sm.registerListener(sl, (Sensor) list.get(0), SensorManager.SENSOR_DELAY_FASTEST);
             headerTextView.setText("Linear Accelerometer");
 
